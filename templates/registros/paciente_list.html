@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Pacientes</h1>
+<ul>
+{% for paciente in object_list %}
+    <li><a href="{{ paciente.get_absolute_url }}">{{ paciente.nombre }}</a></li>
+{% empty %}
+    <li>No hay ningún paciente registrado aún.</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
